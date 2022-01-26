@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('posts', 'PostController');
+
+//HTTPS接続でアセット(CSSや画像など)を読み込むための処理
+if (env('APP_ENV') === 'local') {
+    URL::forceScheme('https');
+ } 
+ 
