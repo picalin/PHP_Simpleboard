@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'PostController@index');
+
 Route::resource('posts', 'PostController');
 
 //HTTPS接続でアセット(CSSや画像など)を読み込むための処理
